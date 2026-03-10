@@ -728,8 +728,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   isRunning: 1
-  scrollSpeed: 7.5
-  speedIncreasePerSecond: 0.05
+  scrollSpeed: 6.5
+  speedIncreasePerSecond: 0.1
+  maxScrollSpeed: 12
   scorePerSecond: 10
   score: 0
   runTime: 0
@@ -1110,10 +1111,10 @@ MonoBehaviour:
   girderY: -2.5
   minGap: 8
   maxGap: 12
-  gapShrinkPerSecond: 0.15
-  minGapLimit: 4.5
-  maxGapLimit: 9
-  unlockGirderAtSpeed: 7.5
+  gapShrinkPerSecond: 0.05
+  minGapLimit: 8
+  maxGapLimit: 10
+  unlockGirderAtSpeed: 10
 --- !u!212 &2117886173
 SpriteRenderer:
   serializedVersion: 2

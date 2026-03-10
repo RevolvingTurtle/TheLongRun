@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [Header("Speed")]
     public float scrollSpeed = 6f;
     public float speedIncreasePerSecond = 0.05f;
+    public float maxScrollSpeed = 12f;
 
     [Header("Scoring")]
     public float scorePerSecond = 10f;
@@ -41,6 +42,7 @@ public class GameManager : MonoBehaviour
         if (!isRunning) return;
 
         scrollSpeed += speedIncreasePerSecond * Time.deltaTime;
+        scrollSpeed = Mathf.Min(scrollSpeed, maxScrollSpeed);
 
         runTime += Time.deltaTime;
         score += Mathf.RoundToInt(scorePerSecond * Time.deltaTime);

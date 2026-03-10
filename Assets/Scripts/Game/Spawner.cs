@@ -12,7 +12,7 @@ public class Spawner : MonoBehaviour
     [Header("Spawn Position")]
     public float spawnX = 12f;
     public float groundY = -4.39f;
-    public float girderY = -2.8f; // tweak until standing hits, duck passes
+    public float girderY = -2.8f;
 
     [Header("Spacing (in world units)")]
     public float minGap = 6f;
@@ -24,7 +24,7 @@ public class Spawner : MonoBehaviour
     public float maxGapLimit = 9f;
 
     [Header("Unlock")]
-    public float unlockGirderAtSpeed = 7.5f; // prevents early unfair deaths
+    public float unlockGirderAtSpeed = 7.5f;
 
     float nextSpawnX;
 
