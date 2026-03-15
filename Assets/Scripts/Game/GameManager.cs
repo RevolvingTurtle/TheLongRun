@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using TMPro;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -8,6 +10,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Run State")]
     public bool isRunning = true;
+    bool isGameOver = false;
 
     [Header("Speed")]
     public float scrollSpeed = 6f;
@@ -25,6 +28,11 @@ public class GameManager : MonoBehaviour
     public float lastRunTime;
     public int lastRunObstaclesCleared;
 
+    [Header("Game Over UI")]
+    public GameObject gameOverPanel;
+    public TMP_Text finalScoreText;
+    public TMP_Text returnText;
+
     const int MaxHighScores = 5;
 
     void Awake()
@@ -35,14 +43,29 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1f;
+
+        if (gameOverPanel != null)
+            gameOverPanel.SetActive(false);
     }
 
     void Update()
     {
+        if (isGameOver)
+        {
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                Time.timeScale = 1f;
+                SceneManager.LoadScene("MainMenu");
+            }
+            return;
+        }
+
         if (!isRunning) return;
 
-        scrollSpeed += speedIncreasePerSecond * Time.deltaTime;
-        scrollSpeed = Mathf.Min(scrollSpeed, maxScrollSpeed);
+        scrollSpeed = Mathf.Min(
+            scrollSpeed + speedIncreasePerSecond * Time.deltaTime,
+            maxScrollSpeed
+        );
 
         runTime += Time.deltaTime;
         score += Mathf.RoundToInt(scorePerSecond * Time.deltaTime);
@@ -61,6 +84,7 @@ public class GameManager : MonoBehaviour
         if (!isRunning) return;
 
         isRunning = false;
+        isGameOver = true;
 
         lastRunScore = score;
         lastRunTime = runTime;
@@ -69,6 +93,15 @@ public class GameManager : MonoBehaviour
         SaveHighScore(score);
 
         Debug.Log($"GAME OVER | Time: {lastRunTime:F2} | Score: {lastRunScore} | Obstacles Cleared: {lastRunObstaclesCleared}");
+
+        if (gameOverPanel != null)
+            gameOverPanel.SetActive(true);
+
+        if (finalScoreText != null)
+            finalScoreText.text = $"Final Score: {lastRunScore}";
+
+        if (returnText != null)
+            returnText.text = "Press R to Return to the Main Menu";
 
         Time.timeScale = 0f;
     }
