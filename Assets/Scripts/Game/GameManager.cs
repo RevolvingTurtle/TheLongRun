@@ -32,6 +32,9 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverPanel;
     public TMP_Text finalScoreText;
     public TMP_Text returnText;
+    public TMP_InputField nameInputField;
+
+    bool scoreSubmitted = false;
 
     const int MaxHighScores = 5;
 
@@ -52,11 +55,20 @@ public class GameManager : MonoBehaviour
     {
         if (isGameOver)
         {
+            if (!scoreSubmitted && Input.GetKeyDown(KeyCode.Return))
+            {
+                SubmitHighScore();
+            }
+
             if (Input.GetKeyDown(KeyCode.R))
             {
+                if (!scoreSubmitted)
+                    SubmitHighScore();
+
                 Time.timeScale = 1f;
                 SceneManager.LoadScene("MainMenu");
             }
+
             return;
         }
 
@@ -90,10 +102,6 @@ public class GameManager : MonoBehaviour
         lastRunTime = runTime;
         lastRunObstaclesCleared = obstaclesCleared;
 
-        SaveHighScore(score);
-
-        Debug.Log($"GAME OVER | Time: {lastRunTime:F2} | Score: {lastRunScore} | Obstacles Cleared: {lastRunObstaclesCleared}");
-
         if (gameOverPanel != null)
             gameOverPanel.SetActive(true);
 
@@ -103,39 +111,71 @@ public class GameManager : MonoBehaviour
         if (returnText != null)
             returnText.text = "Press R to Return to the Main Menu";
 
+        if (nameInputField != null)
+        {
+            nameInputField.text = "";
+            nameInputField.ActivateInputField();
+        }
+
         Time.timeScale = 0f;
     }
 
-    void SaveHighScore(int newScore)
+    public void SubmitHighScore()
     {
-        List<int> scores = LoadHighScores();
-        scores.Add(newScore);
+        if (scoreSubmitted) return;
+
+        string enteredName = "PLAYER";
+
+        if (nameInputField != null && !string.IsNullOrWhiteSpace(nameInputField.text))
+            enteredName = nameInputField.text.Trim();
+
+        SaveHighScore(enteredName, lastRunScore);
+        scoreSubmitted = true;
+
+        Debug.Log($"Saved score: {enteredName} - {lastRunScore}");
+    }
+
+    void SaveHighScore(string playerName, int newScore)
+    {
+        List<HighScoreEntry> scores = LoadHighScores();
+
+        scores.Add(new HighScoreEntry(playerName, newScore));
 
         scores = scores
-            .OrderByDescending(s => s)
+            .OrderByDescending(entry => entry.score)
             .Take(MaxHighScores)
             .ToList();
 
         for (int i = 0; i < MaxHighScores; i++)
         {
-            int value = i < scores.Count ? scores[i] : 0;
-            PlayerPrefs.SetInt($"HighScore_{i}", value);
+            if (i < scores.Count)
+            {
+                PlayerPrefs.SetString($"HighScore_Name_{i}", scores[i].playerName);
+                PlayerPrefs.SetInt($"HighScore_Score_{i}", scores[i].score);
+            }
+            else
+            {
+                PlayerPrefs.DeleteKey($"HighScore_Name_{i}");
+                PlayerPrefs.DeleteKey($"HighScore_Score_{i}");
+            }
         }
 
         PlayerPrefs.Save();
     }
 
-    public List<int> LoadHighScores()
+    public List<HighScoreEntry> LoadHighScores()
     {
-        List<int> scores = new List<int>();
+        List<HighScoreEntry> scores = new List<HighScoreEntry>();
 
         for (int i = 0; i < MaxHighScores; i++)
         {
-            int value = PlayerPrefs.GetInt($"HighScore_{i}", 0);
-            if (value > 0)
-                scores.Add(value);
+            string name = PlayerPrefs.GetString($"HighScore_Name_{i}", "");
+            int score = PlayerPrefs.GetInt($"HighScore_Score_{i}", -1);
+
+            if (!string.IsNullOrEmpty(name) && score >= 0)
+                scores.Add(new HighScoreEntry(name, score));
         }
 
-        return scores.OrderByDescending(s => s).ToList();
+        return scores.OrderByDescending(entry => entry.score).ToList();
     }
 }
