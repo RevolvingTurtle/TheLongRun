@@ -132,7 +132,7 @@ public class GameManager : MonoBehaviour
         SaveHighScore(enteredName, lastRunScore);
         scoreSubmitted = true;
 
-        Debug.Log($"Saved score: {enteredName} - {lastRunScore}");
+        Debug.Log($"score saved {enteredName} - {lastRunScore}");
     }
 
     void SaveHighScore(string playerName, int newScore)
