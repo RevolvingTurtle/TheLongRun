@@ -3,11 +3,9 @@ using UnityEngine;
 public class BackgroundCycle : MonoBehaviour
 {
     public float changeInterval = 30f;
-
-    public Color navyBlue = new Color(0.02f, 0.05f, 0.2f);
-    public Color crimson = new Color(0.6f, 0.05f, 0.1f);
-    public Color emerald = new Color(0.05f, 0.45f, 0.2f);
-
+    public Color navyBlue = new Color(0.82f, 0.69f, 0.69f);
+    public Color crimson = new Color(0.72f, 0.82f, 0.69f);
+    public Color emerald = new Color(0.69f, 0.82f, 0.80f);
     Camera cam;
 
     Color[] colors;
