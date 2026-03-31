@@ -31,6 +31,8 @@ public class PlayerController : MonoBehaviour
 
     bool isDucking;
 
+    public GameObject explosionPrefab;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -113,7 +115,12 @@ public class PlayerController : MonoBehaviour
     {
         if (col.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
         {
-            Die();
+            Vector3 hitPosition = col.contacts[0].point;
+
+            Die(hitPosition);
+
+            Destroy(col.gameObject);
+
             GameManager.I.GameOver();
         }
     }
@@ -130,9 +137,21 @@ public class PlayerController : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireCube(checkPos, checkSize);
     }
-
-    public void Die()
+    public void Die(Vector3 hitPosition)
     {
-        GetComponent<SpriteRenderer>().color = Color.red;
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        if (sr != null)
+            sr.enabled = false;
+
+        Collider2D col = GetComponent<Collider2D>();
+        if (col != null)
+            col.enabled = false;
+
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        if (rb != null)
+            rb.linearVelocity = Vector2.zero;
+
+        if (explosionPrefab != null)
+            Instantiate(explosionPrefab, hitPosition, Quaternion.identity);
     }
 }

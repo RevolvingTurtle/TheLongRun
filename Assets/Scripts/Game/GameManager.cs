@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using System.Collections.Generic;
 using System.Linq;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -60,15 +61,6 @@ public class GameManager : MonoBehaviour
                 SubmitHighScore();
             }
 
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                if (!scoreSubmitted)
-                    SubmitHighScore();
-
-                Time.timeScale = 1f;
-                SceneManager.LoadScene("MainMenu");
-            }
-
             return;
         }
 
@@ -96,28 +88,7 @@ public class GameManager : MonoBehaviour
         if (!isRunning) return;
 
         isRunning = false;
-        isGameOver = true;
-
-        lastRunScore = score;
-        lastRunTime = runTime;
-        lastRunObstaclesCleared = obstaclesCleared;
-
-        if (gameOverPanel != null)
-            gameOverPanel.SetActive(true);
-
-        if (finalScoreText != null)
-            finalScoreText.text = $"Final Score: {lastRunScore}";
-
-        if (returnText != null)
-            returnText.text = "Press R to Return to the Main Menu";
-
-        if (nameInputField != null)
-        {
-            nameInputField.text = "";
-            nameInputField.ActivateInputField();
-        }
-
-        Time.timeScale = 0f;
+        StartCoroutine(GameOverSequence());
     }
 
     public void SubmitHighScore()
@@ -133,6 +104,15 @@ public class GameManager : MonoBehaviour
         scoreSubmitted = true;
 
         Debug.Log($"score saved {enteredName} - {lastRunScore}");
+    }
+
+    public void ReturnToMainMenu()
+    {
+        if (!scoreSubmitted)
+            SubmitHighScore();
+
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MainMenu");
     }
 
     void SaveHighScore(string playerName, int newScore)
@@ -177,5 +157,30 @@ public class GameManager : MonoBehaviour
         }
 
         return scores.OrderByDescending(entry => entry.score).ToList();
+    }
+
+    IEnumerator GameOverSequence()
+    {
+        lastRunScore = score;
+        lastRunTime = runTime;
+        lastRunObstaclesCleared = obstaclesCleared;
+
+        yield return new WaitForSeconds(0.6f);
+
+        isGameOver = true;
+
+        if (gameOverPanel != null)
+            gameOverPanel.SetActive(true);
+
+        if (finalScoreText != null)
+            finalScoreText.text = $"Final Score: {lastRunScore}";
+
+        if (nameInputField != null)
+        {
+            nameInputField.text = "";
+            nameInputField.ActivateInputField();
+        }
+
+        Time.timeScale = 0f;
     }
 }

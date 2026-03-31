@@ -28,7 +28,6 @@ public class HighScoresUI : MonoBehaviour
 
                 if (i == 0)
                 {
-                    // Gold + Bold + Slightly Larger
                     line = $"<b><size=120%><color=#FFD700>{line}</color></size></b>";
                 }
 

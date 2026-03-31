@@ -11,7 +11,7 @@ public class MenuManager : MonoBehaviour
     public void PlayGame()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("GameScene");
+        SceneFader.I.FadeToScene("GameScene");
     }
 
     public void OpenHighScores()
