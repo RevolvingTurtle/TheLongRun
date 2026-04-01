@@ -15,7 +15,16 @@ public class PlayerController : MonoBehaviour
 
     [Header("Ground Check")]
     public LayerMask groundLayer;
-    public float groundSkin = 0.05f; // thin strip below collider
+    public float groundSkin = 0.05f;
+
+    [Header("Hat")]
+    public Transform hatTransform;
+
+    public Vector3 standingHatLocalPosition = new Vector3(0f, 0.6f, 0f);
+    public Vector3 standingHatLocalScale = Vector3.one;
+
+    public Vector3 duckingHatLocalPosition = new Vector3(0.15f, 0.3f, 0f);
+    public Vector3 duckingHatLocalScale = new Vector3(0.8f, 0.8f, 1f);
 
     Rigidbody2D rb;
     BoxCollider2D box;
@@ -45,6 +54,12 @@ public class PlayerController : MonoBehaviour
 
         float standingBottom = standingOffset.y - standingSize.y * 0.5f;
         duckOffset = new Vector2(standingOffset.x, standingBottom + duckSize.y * 0.5f);
+
+        if (hatTransform != null)
+        {
+            hatTransform.localPosition = standingHatLocalPosition;
+            hatTransform.localScale = standingHatLocalScale;
+        }
     }
 
     void Update()
@@ -56,11 +71,9 @@ public class PlayerController : MonoBehaviour
         Vector2 checkPos = new Vector2(b.center.x, b.min.y - groundSkin * 0.5f);
         bool grounded = Physics2D.OverlapBox(checkPos, checkSize, 0f, groundLayer);
 
-        // coyote time
         if (grounded) coyoteTimer = coyoteTime;
         else coyoteTimer -= Time.deltaTime;
 
-        // duck input
         bool duckHeld = Input.GetKey(duckKey) || Input.GetKey(duckKeyAlt);
 
         if (duckOnlyOnGround)
@@ -74,13 +87,11 @@ public class PlayerController : MonoBehaviour
             else StopDuck();
         }
 
-        // jump buffer
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetMouseButtonDown(0))
             bufferTimer = jumpBuffer;
         else
             bufferTimer -= Time.deltaTime;
 
-        // jump (block while ducking)
         if (!isDucking && bufferTimer > 0f && coyoteTimer > 0f)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpVelocity);
@@ -98,6 +109,12 @@ public class PlayerController : MonoBehaviour
         box.offset = duckOffset;
 
         transform.localScale = new Vector3(1f, 0.7f, 1f);
+
+        if (hatTransform != null)
+        {
+            hatTransform.localPosition = duckingHatLocalPosition;
+            hatTransform.localScale = duckingHatLocalScale;
+        }
     }
 
     void StopDuck()
@@ -109,6 +126,12 @@ public class PlayerController : MonoBehaviour
         box.offset = standingOffset;
 
         transform.localScale = Vector3.one;
+
+        if (hatTransform != null)
+        {
+            hatTransform.localPosition = standingHatLocalPosition;
+            hatTransform.localScale = standingHatLocalScale;
+        }
     }
 
     void OnCollisionEnter2D(Collision2D col)
@@ -121,6 +144,17 @@ public class PlayerController : MonoBehaviour
 
             Destroy(col.gameObject);
 
+            GameManager.I.GameOver();
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
+        {
+            Vector3 hitPosition = transform.position;
+
+            Die(hitPosition);
             GameManager.I.GameOver();
         }
     }
@@ -139,9 +173,10 @@ public class PlayerController : MonoBehaviour
     }
     public void Die(Vector3 hitPosition)
     {
-        SpriteRenderer sr = GetComponent<SpriteRenderer>();
-        if (sr != null)
-            sr.enabled = false;
+        foreach (var renderer in GetComponentsInChildren<SpriteRenderer>())
+        {
+            renderer.enabled = false;
+        }
 
         Collider2D col = GetComponent<Collider2D>();
         if (col != null)

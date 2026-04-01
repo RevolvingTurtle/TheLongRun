@@ -9,6 +9,15 @@ public class Spawner : MonoBehaviour
     public GameObject girderPrefab;
     [Range(0f, 1f)] public float girderChance = 0.25f;
 
+    [Header("Raised Platform + Spikes")]
+    public GameObject raisedPlatformPrefab;
+    public GameObject raisedSpikePrefab;
+    [Range(0f, 1f)] public float raisedPatternChance = 0.15f;
+    public float platformY = -3.2f;
+    public float spikeOnPlatformY = -2.6f;
+    public float unlockRaisedPatternAtSpeed = 8.5f;
+    public float platformEdgeInset = 0.15f;
+
     [Header("Spawn Position")]
     public float spawnX = 12f;
     public float groundY = -4.39f;
@@ -27,6 +36,7 @@ public class Spawner : MonoBehaviour
     public float unlockGirderAtSpeed = 7.5f;
 
     float nextSpawnX;
+    bool lastSpawnWasRaisedPattern = false;
 
     void Start()
     {
@@ -52,12 +62,32 @@ public class Spawner : MonoBehaviour
 
     void Spawn()
     {
+        bool raisedPatternUnlocked = GameManager.I.scrollSpeed >= unlockRaisedPatternAtSpeed;
+
+        bool canSpawnRaisedPattern =
+            !lastSpawnWasRaisedPattern &&
+            raisedPatternUnlocked &&
+            raisedPlatformPrefab != null &&
+            raisedSpikePrefab != null;
+
+        bool spawnRaisedPattern =
+            canSpawnRaisedPattern &&
+            Random.value < raisedPatternChance;
+
+        if (spawnRaisedPattern)
+        {
+            SpawnRaisedPlatformPattern();
+            lastSpawnWasRaisedPattern = true;
+            return;
+        }
+
         bool girdersUnlocked = GameManager.I.scrollSpeed >= unlockGirderAtSpeed;
         bool spawnGirder = girdersUnlocked && girderPrefab != null && Random.value < girderChance;
 
         if (spawnGirder)
         {
             Instantiate(girderPrefab, new Vector3(spawnX, girderY, 0f), Quaternion.identity);
+            lastSpawnWasRaisedPattern = false;
             return;
         }
 
@@ -69,5 +99,21 @@ public class Spawner : MonoBehaviour
 
         var prefab = groundObstaclePrefabs[Random.Range(0, groundObstaclePrefabs.Length)];
         Instantiate(prefab, new Vector3(spawnX, groundY, 0f), Quaternion.identity);
+        lastSpawnWasRaisedPattern = false;
+    }
+
+    void SpawnRaisedPlatformPattern()
+    {
+        GameObject platform = Instantiate(
+            raisedPlatformPrefab,
+            new Vector3(spawnX, platformY, 0f),
+            Quaternion.identity
+        );
+
+        float platformWidth = platform.GetComponent<SpriteRenderer>().bounds.size.x;
+
+        float topSpikeX = spawnX + (platformWidth / 2.5f) - platformEdgeInset;
+
+        Instantiate(raisedSpikePrefab, new Vector3(topSpikeX, spikeOnPlatformY, 0f), Quaternion.identity);
     }
 }
