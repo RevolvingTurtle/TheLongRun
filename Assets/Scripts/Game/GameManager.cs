@@ -35,6 +35,10 @@ public class GameManager : MonoBehaviour
     public TMP_Text returnText;
     public TMP_InputField nameInputField;
 
+    [Header("UI Sounds")]
+    public AudioSource uiAudioSource;
+    public AudioClip buttonClickClip;
+
     bool scoreSubmitted = false;
 
     const int MaxHighScores = 5;
@@ -182,5 +186,14 @@ public class GameManager : MonoBehaviour
         }
 
         Time.timeScale = 0f;
+    }
+
+    public void PlayButtonClick()
+    {
+        if (uiAudioSource != null && buttonClickClip != null)
+        {
+            uiAudioSource.pitch = Random.Range(0.95f, 1.05f);
+            uiAudioSource.PlayOneShot(buttonClickClip);
+        }
     }
 }

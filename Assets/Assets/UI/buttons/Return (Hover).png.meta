@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: aa70cbf99bb75904aa0372a30da2b2f4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3183112507787556613
+    second: Return (Hover)_0
+  - first:
+      213: -7408308620647979612
+    second: Return (Hover)_1
+  - first:
+      213: -7907838921743887892
+    second: Return (Hover)_2
+  - first:
+      213: -4133763779924873442
+    second: Return (Hover)_3
+  - first:
+      213: -3826903744978703015
+    second: Return (Hover)_4
+  - first:
+      213: -4947657369095849332
+    second: Return (Hover)_5
+  - first:
+      213: 2143273758452632081
+    second: Return (Hover)_6
+  - first:
+      213: 2406880016305686035
+    second: Return (Hover)_7
+  - first:
+      213: 592327473510511377
+    second: Return (Hover)_8
+  - first:
+      213: 3340352993208740689
+    second: Return (Hover)_9
+  - first:
+      213: 8265511690285405861
+    second: Return (Hover)_10
+  - first:
+      213: -4079624941476607741
+    second: Return (Hover)_11
+  - first:
+      213: -5736557201877138024
+    second: Return (Hover)_12
+  - first:
+      213: 8110941438722167712
+    second: Return (Hover)_13
+  - first:
+      213: -7674387817998135598
+    second: Return (Hover)_14
+  - first:
+      213: 8198371612362771855
+    second: Return (Hover)_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Return (Hover)_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 495
+        width: 101
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 507b7c206ffac2c20800000000000000
+      internalID: 3183112507787556613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Return (Hover)_1
+      rect:
+        serializedVersion: 2
+        x: 2251
+        y: 495
+        width: 101
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a520d77f86603990800000000000000
+      internalID: -7408308620647979612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Return (Hover)_2
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 235
+        width: 97
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce19270f566b14290800000000000000
+      internalID: -7907838921743887892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Return (Hover)_3
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 235
+        width: 67
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1fa3386ebbe1a6c0800000000000000
+      internalID: -4133763779924873442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Return (Hover)_4
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 235
+        width: 86
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95daeead15b14eac0800000000000000
+      internalID: -3826903744978703015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Return (Hover)_5
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 232
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8ab2bc26d3665bb0800000000000000
+      internalID: -4947657369095849332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Return (Hover)_6
+      rect:
+        serializedVersion: 2
+        x: 841
+        y: 235
+        width: 97
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11a4cf4b0207ebd10800000000000000
+      internalID: 2143273758452632081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Return (Hover)_7
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 231
+        width: 98
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31603e46f94f66120800000000000000
+      internalID: 2406880016305686035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Return (Hover)_8
+      rect:
+        serializedVersion: 2
+        x: 1163
+        y: 235
+        width: 87
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1137c49e2be583800800000000000000
+      internalID: 592327473510511377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Return (Hover)_9
+      rect:
+        serializedVersion: 2
+        x: 1269
+        y: 232
+        width: 130
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15bae9079515b5e20800000000000000
+      internalID: 3340352993208740689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Return (Hover)_10
+      rect:
+        serializedVersion: 2
+        x: 1498
+        y: 235
+        width: 116
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a6dc4af61ff4b270800000000000000
+      internalID: 8265511690285405861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Return (Hover)_11
+      rect:
+        serializedVersion: 2
+        x: 1658
+        y: 235
+        width: 67
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30986720bb24267c0800000000000000
+      internalID: -4079624941476607741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Return (Hover)_12
+      rect:
+        serializedVersion: 2
+        x: 1763
+        y: 231
+        width: 97
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89587645e97a360b0800000000000000
+      internalID: -5736557201877138024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Return (Hover)_13
+      rect:
+        serializedVersion: 2
+        x: 1901
+        y: 232
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a3d701d34adf8070800000000000000
+      internalID: 8110941438722167712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Return (Hover)_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 101
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dec2afa0f81f7590800000000000000
+      internalID: -7674387817998135598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Return (Hover)_15
+      rect:
+        serializedVersion: 2
+        x: 2251
+        y: 0
+        width: 101
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8d878b6b8776c170800000000000000
+      internalID: 8198371612362771855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Return (Hover)_0: 3183112507787556613
+      Return (Hover)_1: -7408308620647979612
+      Return (Hover)_10: 8265511690285405861
+      Return (Hover)_11: -4079624941476607741
+      Return (Hover)_12: -5736557201877138024
+      Return (Hover)_13: 8110941438722167712
+      Return (Hover)_14: -7674387817998135598
+      Return (Hover)_15: 8198371612362771855
+      Return (Hover)_2: -7907838921743887892
+      Return (Hover)_3: -4133763779924873442
+      Return (Hover)_4: -3826903744978703015
+      Return (Hover)_5: -4947657369095849332
+      Return (Hover)_6: 2143273758452632081
+      Return (Hover)_7: 2406880016305686035
+      Return (Hover)_8: 592327473510511377
+      Return (Hover)_9: 3340352993208740689
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

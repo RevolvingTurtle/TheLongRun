@@ -1,0 +1,520 @@
+fileFormatVersion: 2
+guid: 84aca6703a8dcb44b9a3f78fdda6008d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5592428483114681495
+    second: Visuals (Hover)-1_0
+  - first:
+      213: 6446398311376868351
+    second: Visuals (Hover)-1_1
+  - first:
+      213: -1189320423539070970
+    second: Visuals (Hover)-1_2
+  - first:
+      213: 1234080016740011198
+    second: Visuals (Hover)-1_3
+  - first:
+      213: -5234693449631389044
+    second: Visuals (Hover)-1_4
+  - first:
+      213: 6071419711567987094
+    second: Visuals (Hover)-1_5
+  - first:
+      213: -4574056827513602028
+    second: Visuals (Hover)-1_6
+  - first:
+      213: 5081410206716717343
+    second: Visuals (Hover)-1_7
+  - first:
+      213: -8491484114259002783
+    second: Visuals (Hover)-1_8
+  - first:
+      213: -1744115224558102410
+    second: Visuals (Hover)-1_9
+  - first:
+      213: -5530899431237436750
+    second: Visuals (Hover)-1_10
+  - first:
+      213: -194440756890546549
+    second: Visuals (Hover)-1_11
+  - first:
+      213: -5975719278384198110
+    second: Visuals (Hover)-1_12
+  - first:
+      213: -413479332679680563
+    second: Visuals (Hover)-1_13
+  - first:
+      213: -8272437858029319346
+    second: Visuals (Hover)-1_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Visuals (Hover)-1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 495
+        width: 101
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96b3c20bce3b362b0800000000000000
+      internalID: -5592428483114681495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visuals (Hover)-1_1
+      rect:
+        serializedVersion: 2
+        x: 2251
+        y: 495
+        width: 101
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff3db461c15367950800000000000000
+      internalID: 6446398311376868351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visuals (Hover)-1_2
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 199
+        width: 129
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60826d6406fae7fe0800000000000000
+      internalID: -1189320423539070970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visuals (Hover)-1_3
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 199
+        width: 42
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebc423e9c35502110800000000000000
+      internalID: 1234080016740011198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visuals (Hover)-1_4
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 195
+        width: 169
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8a28aaca02aa57b0800000000000000
+      internalID: -5234693449631389044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visuals (Hover)-1_5
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 199
+        width: 130
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69180565f04024450800000000000000
+      internalID: 6071419711567987094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visuals (Hover)-1_6
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 277
+        width: 69
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4100a9dbc8fa580c0800000000000000
+      internalID: -4574056827513602028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visuals (Hover)-1_7
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 194
+        width: 121
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f19e46919abc48640800000000000000
+      internalID: 5081410206716717343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visuals (Hover)-1_8
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 195
+        width: 167
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16a38b91030382a80800000000000000
+      internalID: -8491484114259002783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visuals (Hover)-1_9
+      rect:
+        serializedVersion: 2
+        x: 1423
+        y: 195
+        width: 201
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6781dd8a178abc7e0800000000000000
+      internalID: -1744115224558102410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visuals (Hover)-1_10
+      rect:
+        serializedVersion: 2
+        x: 1686
+        y: 199
+        width: 150
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2babea0754c4e33b0800000000000000
+      internalID: -5530899431237436750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visuals (Hover)-1_11
+      rect:
+        serializedVersion: 2
+        x: 1885
+        y: 199
+        width: 103
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8e4eab69253d4df0800000000000000
+      internalID: -194440756890546549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visuals (Hover)-1_12
+      rect:
+        serializedVersion: 2
+        x: 2041
+        y: 194
+        width: 120
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22ec47e1afaf11da0800000000000000
+      internalID: -5975719278384198110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visuals (Hover)-1_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 101
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcd79a5dcb6034af0800000000000000
+      internalID: -413479332679680563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visuals (Hover)-1_14
+      rect:
+        serializedVersion: 2
+        x: 2251
+        y: 0
+        width: 101
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4b4bade895623d80800000000000000
+      internalID: -8272437858029319346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Visuals (Hover)-1_0: -5592428483114681495
+      Visuals (Hover)-1_1: 6446398311376868351
+      Visuals (Hover)-1_10: -5530899431237436750
+      Visuals (Hover)-1_11: -194440756890546549
+      Visuals (Hover)-1_12: -5975719278384198110
+      Visuals (Hover)-1_13: -413479332679680563
+      Visuals (Hover)-1_14: -8272437858029319346
+      Visuals (Hover)-1_2: -1189320423539070970
+      Visuals (Hover)-1_3: 1234080016740011198
+      Visuals (Hover)-1_4: -5234693449631389044
+      Visuals (Hover)-1_5: 6071419711567987094
+      Visuals (Hover)-1_6: -4574056827513602028
+      Visuals (Hover)-1_7: 5081410206716717343
+      Visuals (Hover)-1_8: -8491484114259002783
+      Visuals (Hover)-1_9: -1744115224558102410
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
     Vector2 duckOffset;
 
     bool isDucking;
-
+    AudioSource audioSource;
     public GameObject explosionPrefab;
 
     void Awake()
@@ -60,6 +60,8 @@ public class PlayerController : MonoBehaviour
             hatTransform.localPosition = standingHatLocalPosition;
             hatTransform.localScale = standingHatLocalScale;
         }
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -95,6 +97,12 @@ public class PlayerController : MonoBehaviour
         if (!isDucking && bufferTimer > 0f && coyoteTimer > 0f)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpVelocity);
+    if (audioSource != null)
+    {
+        audioSource.pitch = Random.Range(0.95f, 1.05f);
+        audioSource.Play();
+    }
+
             bufferTimer = 0f;
             coyoteTimer = 0f;
         }
