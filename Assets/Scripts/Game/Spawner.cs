@@ -23,7 +23,7 @@ public class Spawner : MonoBehaviour
     public float groundY = -4.39f;
     public float girderY = -2.8f;
 
-    [Header("Spacing (in world units)")]
+    [Header("spacing (world units)")]
     public float minGap = 6f;
     public float maxGap = 12f;
 

@@ -5,7 +5,7 @@ public class ScrollingBackground : MonoBehaviour
     public Transform bg1;
     public Transform bg2;
 
-    public float scrollMultiplier = 0.4f; // slower than obstacles
+    public float scrollMultiplier = 0.4f;
     public float spriteWidth = 20f;
 
     void Update()
