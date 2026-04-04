@@ -89,7 +89,7 @@ public class PlayerController : MonoBehaviour
             else StopDuck();
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
             bufferTimer = jumpBuffer;
         else
             bufferTimer -= Time.deltaTime;
