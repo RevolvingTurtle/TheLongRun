@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager I;
 
+    public CameraShake cameraShake;
+
     [Header("Run State")]
     public bool isRunning = true;
     bool isGameOver = false;
@@ -93,6 +95,7 @@ public class GameManager : MonoBehaviour
 
         isRunning = false;
         StartCoroutine(GameOverSequence());
+
     }
 
     public void SubmitHighScore()
@@ -165,6 +168,9 @@ public class GameManager : MonoBehaviour
 
     IEnumerator GameOverSequence()
     {
+        if (cameraShake != null)
+            cameraShake.Shake();
+
         lastRunScore = score;
         lastRunTime = runTime;
         lastRunObstaclesCleared = obstaclesCleared;

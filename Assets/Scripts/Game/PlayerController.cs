@@ -1,7 +1,8 @@
 using UnityEngine;
-
+using System.Collections;
 public class PlayerController : MonoBehaviour
 {
+
     [Header("Jump")]
     public float jumpVelocity = 12f;
     public float coyoteTime = 0.08f;
@@ -42,6 +43,12 @@ public class PlayerController : MonoBehaviour
     AudioSource audioSource;
     public GameObject explosionPrefab;
 
+    public float squashAmount = 0.8f;
+    public float stretchAmount = 1.2f;
+    public float bounceSpeed = 10f;
+
+    bool wasGrounded;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -73,6 +80,8 @@ public class PlayerController : MonoBehaviour
         Vector2 checkPos = new Vector2(b.center.x, b.min.y - groundSkin * 0.5f);
         bool grounded = Physics2D.OverlapBox(checkPos, checkSize, 0f, groundLayer);
 
+        wasGrounded = grounded;
+
         if (grounded) coyoteTimer = coyoteTime;
         else coyoteTimer -= Time.deltaTime;
 
@@ -97,7 +106,10 @@ public class PlayerController : MonoBehaviour
         if (!isDucking && bufferTimer > 0f && coyoteTimer > 0f)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpVelocity);
-    if (audioSource != null)
+
+            StartCoroutine(JumpBounce());
+
+            if (audioSource != null)
     {
         audioSource.pitch = Random.Range(0.95f, 1.05f);
         audioSource.Play();
@@ -105,6 +117,22 @@ public class PlayerController : MonoBehaviour
 
             bufferTimer = 0f;
             coyoteTimer = 0f;
+        }
+
+        IEnumerator JumpBounce()
+        {
+            Vector3 originalScale = Vector3.one;
+
+            // Stretch upward as the player launches
+            transform.localScale = new Vector3(0.9f, 1.2f, 1f);
+            yield return new WaitForSeconds(0.1f);
+
+            // Slight squash as it settles
+            transform.localScale = new Vector3(1.1f, 0.9f, 1f);
+            yield return new WaitForSeconds(0.1f);
+
+            // Back to normal
+            transform.localScale = originalScale;
         }
     }
 
@@ -197,4 +225,5 @@ public class PlayerController : MonoBehaviour
         if (explosionPrefab != null)
             Instantiate(explosionPrefab, hitPosition, Quaternion.identity);
     }
+
 }
