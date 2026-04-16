@@ -64,21 +64,17 @@ public class GameManager : MonoBehaviour
         {
             if (!scoreSubmitted && Input.GetKeyDown(KeyCode.Return))
             {
-                SubmitHighScore();
+                SubmitHighScore(); // score submission for once run has ended
             }
-
             return;
         }
-
-        if (!isRunning) return;
-
+        if (!isRunning) return; // gradually increasing speed which will stop at a maximum
         scrollSpeed = Mathf.Min(
             scrollSpeed + speedIncreasePerSecond * Time.deltaTime,
             maxScrollSpeed
         );
-
         runTime += Time.deltaTime;
-        score += Mathf.RoundToInt(scorePerSecond * Time.deltaTime);
+        score += Mathf.RoundToInt(scorePerSecond * Time.deltaTime); // track run duration and score over time
     }
 
     public void AddObstacleScore(int amount)

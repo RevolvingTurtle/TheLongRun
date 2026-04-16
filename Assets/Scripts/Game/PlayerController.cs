@@ -105,18 +105,15 @@ public class PlayerController : MonoBehaviour
 
         if (!isDucking && bufferTimer > 0f && coyoteTimer > 0f)
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpVelocity);
-
-            StartCoroutine(JumpBounce());
-
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpVelocity); // apply jump velocity
+            StartCoroutine(JumpBounce()); // coroutine for for the bounce
             if (audioSource != null)
     {
-        audioSource.pitch = Random.Range(0.95f, 1.05f);
+        audioSource.pitch = Random.Range(0.95f, 1.05f);// play jump sound with a slight pitch variation
         audioSource.Play();
     }
-
             bufferTimer = 0f;
-            coyoteTimer = 0f;
+            coyoteTimer = 0f;// reset timing buffers after jump
         }
 
         IEnumerator JumpBounce()
@@ -140,13 +137,10 @@ public class PlayerController : MonoBehaviour
     {
         if (isDucking) return;
         isDucking = true;
-
         box.size = duckSize;
         box.offset = duckOffset;
-
-        transform.localScale = new Vector3(1f, 0.7f, 1f);
-
-        if (hatTransform != null)
+        transform.localScale = new Vector3(1f, 0.7f, 1f);//shrink collider scale to fit under obstacles
+        if (hatTransform != null)//adjusting the fedora hat's position and scale to match character
         {
             hatTransform.localPosition = duckingHatLocalPosition;
             hatTransform.localScale = duckingHatLocalScale;
@@ -186,12 +180,11 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Obstacle"))//checking if player has collided with obstacle
         {
-            Vector3 hitPosition = transform.position;
-
-            Die(hitPosition);
-            GameManager.I.GameOver();
+            Vector3 hitPosition = transform.position;//store players position at moment of collision
+            Die(hitPosition);//trigger death
+            GameManager.I.GameOver();//enter game over state
         }
     }
 
