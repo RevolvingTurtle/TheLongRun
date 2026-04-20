@@ -1336,7 +1336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   cameraShake: {fileID: 519420033}
   isRunning: 1
-  scrollSpeed: 6.5
+  scrollSpeed: 9
   speedIncreasePerSecond: 0.1
   maxScrollSpeed: 12
   scorePerSecond: 10
